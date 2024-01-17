@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (todoItem.completed) {
     listItem.classList.add("completed");
     }
+    //โค้ดที่ให้มีไว้สำหรับสร้างปุ่ม "ลบ" และ "เสร็จ" 
+    //(หรือ "ยกเลิก" ถ้า Todo นั้นเสร็จสิ้นแล้ว) และเพิ่มไปยังรายการ Todo ในหน้าเว็บ โค้ดนี้ทำงานในบริบทของการแสดงรายการ 
+    //Todo ทั้งหมดบนหน้าเว็บทำให้ผู้ใช้สามารถลบ Todo หรือทำเครื่องหมายว่า Todo เสร็จสิ้นได้.
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "ลบ";
     deleteButton.addEventListener("click", () => deleteTodo(i));

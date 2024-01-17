@@ -1,55 +1,56 @@
 /* สไตล์ CSS ของโปรแกรม Todo */
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    margin: 20px;
-    background-color: #f8f8f8;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;  /* กำหนดแบบอักษรที่จะใช้แสดงข้อความ. */
+    text-align: center; /* จัดตำแหน่งข้อความให้อยู่ตรงกลางของหน้าเว็บ. */
+    margin: 20px; /* เพิ่มขอบรอบเนื้อหาในหน้าเว็บ. */
+    background-color: #f8f8f8; /* กำหนดสีพื้นหลังของหน้าเว็บ. */
     }
     h1 {
-    color: #333;
-    font-size: 24px;
-    background-color: #78a3ff;
-    padding: 15px;
-    border-radius: 5px;
-    color: rgb(0, 0, 0);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333; /*  กำหนดสีของข้อความ. */
+    font-size: 24px; /* กำหนดขนาดตัวอักษรของหัวข้อ. */
+    background-color: #78a3ff; /* กำหนดสีพื้นหลังของหัวข้อ. */
+    padding: 15px; /* เพิ่มพื้นที่ภายในของหัวข้อ. */
+    border-radius: 5px; /* กำหนดมุมโค้งให้กับขอบของหัวข้อ. */
+    color: rgb(0, 0, 0); /* กำหนดสีของข้อความ. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กับข้อความ. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับกล่องของหัวข้อ. */
     }
     ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* ปรับลักษณะของเครื่องหมายลำดับของรายการ. */
+    padding: 0; /* เพิ่มพื้นที่ภายในของหัวข้อ. */
     }
     li {
-    background-color: #fff;
+    background-color: #fff; /* กำหนดสีพื้นหลังของแต่ละรายการ. */
     
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s, transform 0.2s;
+    padding: 15px; /* เพิ่มพื้นที่ภายในของแต่ละรายการ. */
+    margin: 10px 0; /* กำหนดระยะห่างของแต่ละรายการ. */ 
+    border-radius: 8px; /* กำหนดมุมโค้งให้กับขอบของแต่ละรายการ. */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับแต่ละรายการ. */
+    /*  ใช้สำหรับการจัดวางแบบ Flexbox เพื่อจัดตำแหน่งและการจัดวางของรายการ.*/
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    transition: background-color 0.3s, transform 0.2s; /* เพิ่มการเปลี่ยนแปลงที่สามารถดูเห็นได้ในการเปลี่ยนสีพื้นหลังและการเคลื่อนไหว. */
     }
     li.completed {
-    background-color: #d4edda;
-    text-decoration: line-through;
+    background-color: #d4edda; /* กำหนดสีพื้นหลังของรายการที่เสร็จสิ้น. */
+    text-decoration: line-through; /* กำหนดเส้นใต้ข้อความทำให้ดูเหมือนว่าถูกขีดทับ. */
     }
     input[type="text"] {
-    width: 60%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-right: 10px;
-    font-size: 16px;
+    width: 60%; /* กำหนดความกว้างของช่องป้อนข้อความ. */
+    padding: 12px; /* เพิ่มพื้นที่ภายในของช่องป้อนข้อความ. */
+    border: 1px solid #ccc; /* กำหนดขอบของช่องป้อนข้อความ. */
+    border-radius: 8px; /* กำหนดมุมโค้งให้กับขอบของช่องป้อนข้อความ. */
+    margin-right: 10px; /* กำหนดระยะห่างด้านขวาของช่องป้อนข้อความ. */
+    font-size: 16px; /*  กำหนดขนาดตัวอักษรของข้อความในช่องป้อน. */
     }
     button {
-    padding: 12px 24px;
-    background-color: #ff7300;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 12px 24px; /*  เพิ่มพื้นที่ภายในของปุ่ม. */
+    background-color: #ff7300; /* กำหนดสีพื้นหลังของปุ่ม. */
+    color: white; /* กำหนดสีของข้อความบนปุ่ม. */
+    border: none; /* กำหนดขอบของปุ่ม. */
+    border-radius: 8px; /*หนดมุมโค้งให้กับขอบของปุ่ม.  */
+    cursor: pointer; /* เปล */
     transition: background-color 0.3s;
     }
     button:hover {
