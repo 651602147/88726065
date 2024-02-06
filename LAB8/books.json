@@ -1,0 +1,26 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "name": "Ichigo Ichie ละเลียดปัจจุบัน ดื่มด่ำชีวิต",
+        "price": "225",
+        "author1": "Hector Garcia",
+        "author2": "Francesc Miralles"
+      },
+      {
+        "id": 2,
+        "name": "Happy First เริ่มต้นที่ความสุข",
+        "price": "265",
+        "author1": "พักแช-กยู",
+        "author2": "โชซองมิน"
+      },
+      {
+        "id": 3,
+        "name": "BLU & ROSSO เยือกเย็น ร้อนแรง",
+        "price": "320",
+        "author1": "BLU โดย ซึจิ ฮิโตนาริ (Tsuji Hitonari)",
+        "author2": "ROSSO โดย เอคุนิ คาโอริ (Ekuni Kaori)"
+      }
+    ]
+  }
+  

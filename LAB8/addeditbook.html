@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautiful Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20vh;
+    }
+    
+    .form-wrapper {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      background-color: #ff9900;
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .form-input {
+      margin-bottom: 15px;
+    }
+
+    .form-input input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .button {
+      text-align: center;
+    }
+
+    .button button {
+      padding: 10px 20px;
+      background-color: #ff9900;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button button:hover {
+      background-color: #e68a00;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book DB - Add/Edit</title>
+  </head>
+  <body>
+    <header><h3>Book DB : Add / Edit</h3></header>
+    <div class="container">
+      <div class="form-input">
+        <input type="hidden" id="id" />
+        <input type="text" id="book_name" placeholder="ชื่อหนังสือ" /> <br />
+        <input type="text" id="book_price" placeholder="ราคา" /> <br />
+        <input type="text" id="book_Author1" placeholder="ผู้แต่ง-1" /> <br />
+        <input type="text" id="book_Author2" placeholder="ผู้แต่ง-2" /> <br />
+        <input type="text" id="book_Author3" placeholder="ผู้แต่ง-3" /> <br />
+        <div class="button">
+          <button onclick="addeditBook()">Save</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      var books;
+      function findMaxBookId() {
+        var max = 0;
+        for (var i = 0; i < books.length; i++) {
+          if (books[i].id > max) {
+            max = books[i].id;
+          }
+        }
+        return max;
+      }
+      function addeditBook() {
+        addBook();
+        window.location.href = "search.html";
+      }
+      function addBook() {
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("book_name").value;
+        var price = document.getElementById("book_price").value;
+        var author1 = document.getElementById("book_Author1").value;
+        var author2 = document.getElementById("book_Author2").value;
+        var author3 = document.getElementById("book_Author3").value;
+        if (id == "") {
+          id = findMaxBookId() + 1;
+          var book = {
+            id: id,
+            name: name,
+            price: price,
+            author1: author1,
+            author2: author2,
+            author3: author3,
+          };
+          books.push(book);
+        } else {
+          for (var i = 0; i < books.length; i++) {
+            if (books[i].id == id) {
+              books[i].name = name;
+              books[i].price = price;
+              books[i].author1 = author1;
+              books[i].author2 = author2;
+              books[i].author3 = author3;
+            }
+          }
+        }
+
+        localStorage.setItem("books", JSON.stringify(books));
+
+        document.getElementById("id").value = "";
+        document.getElementById("book_name").value = "";
+        document.getElementById("book_price").value = "";
+        document.getElementById("book_Author1").value = "";
+        document.getElementById("book_Author2").value = "";
+        document.getElementById("book_Author3").value = "";
+        document.getElementById("book_name").focus();
+      }
+
+      var books = JSON.parse(localStorage.getItem("books"));
+      if (books == null) {
+        books = [];
+      }
+
+      var urlParams = new URLSearchParams(window.location.search);
+      var id = urlParams.get("id");
+      if (id) {
+        var bookToEdit = books.find(function (book) {
+          return book.id == id;
+        });
+        if (bookToEdit) {
+          document.getElementById("id").value = bookToEdit.id;
+          document.getElementById("book_name").value = bookToEdit.name;
+          document.getElementById("book_price").value = bookToEdit.price;
+          document.getElementById("book_Author1").value = bookToEdit.author1;
+          document.getElementById("book_Author2").value = bookToEdit.author2;
+          document.getElementById("book_Author3").value = bookToEdit.author3;
+        }
+      }
+    </script>
+  </body>
+</html>
